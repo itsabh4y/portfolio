@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import LoadingScreen from './LoadingScreen';
 
 function App() {
+  const [loading, setLoading] = useState(true);
   const [time, setTime] = useState('');
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
@@ -83,7 +85,9 @@ function App() {
   };
 
   return (
-    <div className="site-container">
+    <>
+      {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
+      <div className={`site-container ${loading ? 'site-hidden' : 'site-revealed'}`}>
       {/* Left Sidebar */}
       <aside className="left-sidebar">
         <div className="b-logo blue-dot">
@@ -406,6 +410,7 @@ function App() {
         <a href="mailto:hey@abhayp.xyz" className="mobile-menu-email">hey@abhayp.xyz</a>
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,3 +1,233 @@
+/* ============================================
+   LOADING SCREEN — LIGHT THEME
+   ============================================ */
+
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #f7f5ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: crosshair;
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.loading-screen.loading-exit {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+}
+
+.loading-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.loading-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    pointer-events: none;
+}
+
+/* Logo */
+.loading-logo-container {
+    margin-bottom: 12px;
+}
+
+.loading-logo-wrapper {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-favicon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    animation: favicon-breathe 2s ease-in-out infinite;
+}
+
+.logo-orbit-ring {
+    position: absolute;
+    inset: -6px;
+    border: 1.5px solid rgba(14, 165, 233, 0.2);
+    border-radius: 18px;
+    animation: ring-breathe 2.5s ease-in-out infinite;
+}
+
+.logo-orbit-ring-2 {
+    inset: -14px;
+    border-radius: 22px;
+    border-color: rgba(14, 165, 233, 0.1);
+    animation-delay: 0.4s;
+    animation-duration: 3s;
+}
+
+@keyframes favicon-breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+}
+
+@keyframes ring-breathe {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.08); opacity: 1; }
+}
+
+/* Brand text */
+.loading-brand {
+    font-family: 'Playfair Display', 'Instrument Serif', Georgia, serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #111111;
+    letter-spacing: -0.01em;
+}
+
+.loading-tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #999;
+    text-transform: uppercase;
+}
+
+/* Progress bar */
+.loading-progress-track {
+    width: 200px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.06);
+    border-radius: 2px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+    border-radius: 2px;
+    transition: width 0.15s ease;
+    box-shadow: 0 0 8px rgba(14, 165, 233, 0.3);
+}
+
+/* Meta info row */
+.loading-meta {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+}
+
+.loading-status {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: rgba(14, 165, 233, 0.6);
+    letter-spacing: 0.5px;
+}
+
+.loading-percentage {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+/* Interaction hint */
+.loading-interact-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+    margin-top: 24px;
+    animation: hint-fade 2.5s ease-in-out infinite;
+}
+
+@keyframes hint-fade {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 0.7; }
+}
+
+/* Mobile loading screen */
+@media (max-width: 768px) {
+    .loading-brand {
+        font-size: 1.25rem;
+    }
+    .loading-favicon {
+        width: 40px;
+        height: 40px;
+    }
+    .loading-logo-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+    .loading-progress-track,
+    .loading-meta {
+        width: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loading-brand {
+        font-size: 1.1rem;
+    }
+    .loading-favicon {
+        width: 36px;
+        height: 36px;
+    }
+    .loading-logo-wrapper {
+        width: 52px;
+        height: 52px;
+    }
+    .loading-progress-track,
+    .loading-meta {
+        width: 140px;
+    }
+    .loading-interact-hint {
+        display: none;
+    }
+}
+
+/* ============================================
+   END LOADING SCREEN
+   ============================================ */
+
+/* Site reveal transition */
+.site-hidden {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.site-revealed {
+    animation: site-reveal 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes site-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 :root {
     --bg-color: #f7f5ef;
     --text-primary: #111111;
