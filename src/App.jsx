@@ -205,7 +205,7 @@ function App() {
                   <span className="tag">Marketing</span>
                   <span className="tag">Design System</span>
                 </div>
-                <a href="#" className="project-link">Visit the site ↗</a>
+                <a href="https://thepowerdown.in" target='_blank' className="project-link">Visit the site ↗</a>
               </div>
             </article>
 
@@ -222,7 +222,7 @@ function App() {
                   <span className="tag">Cloud</span>
                   <span className="tag">Nepal First</span>
                 </div>
-                <a href="#" className="project-link">Visit the site ↗</a>
+                <a href="https://acsinfotech.com.np" target='_blank' className="project-link">Visit the site ↗</a>
               </div>
             </article>
 
@@ -239,7 +239,7 @@ function App() {
                   <span className="tag">Dashboard</span>
                   <span className="tag">Payments</span>
                 </div>
-                <a href="#" className="project-link">Visit the site ↗</a>
+                <a href="https://cartve.abhayp.xyz" target='_blank' className="project-link">Visit the site ↗</a>
               </div>
             </article>
           </div>
@@ -344,11 +344,11 @@ function App() {
           <a href="mailto:hey@abhayp.xyz" className="btn-contact">hey@abhayp.xyz →</a>
           
           <div className="social-links">
-            <a href="#" className="social-link">Instagram</a>
+            <a href="https://www.instagram.com/webxabhay/" className="social-link">Instagram</a>
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>·</span>
-            <a href="#" className="social-link">Github</a>
+            <a href="https://github.com/itsabh4y" className="social-link">Github</a>
             <span style={{ color: 'rgba(255,255,255,0.5)' }}>·</span>
-            <a href="#" className="social-link">Email</a>
+            <a href="mailto:hey@abhayp.xyz" className="social-link">Email</a>
           </div>
         </section>
 
@@ -356,11 +356,10 @@ function App() {
         <footer className="site-footer reveal-section" ref={addToRefs}>
           <div className="footer-logo">By the Horizons</div>
           <div className="footer-socials">
-            <a href="#" className="footer-social-link" title="Instagram"><i className="fa-brands fa-instagram"></i></a>
-            <a href="#" className="footer-social-link" title="Discord"><i className="fa-brands fa-discord"></i></a>
-            <a href="#" className="footer-social-link" title="Email"><i className="fa-regular fa-envelope"></i></a>
-            <a href="#" className="footer-social-link" title="Behance"><i className="fa-brands fa-behance"></i></a>
-            <a href="#" className="footer-social-link" title="Github"><i className="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/webxabhay/" className="footer-social-link" title="Instagram"><i className="fa-brands fa-instagram"></i></a>
+            <a href="https://discord.com/users/1334928033848623246" className="footer-social-link" title="Discord"><i className="fa-brands fa-discord"></i></a>
+            <a href="mailto:hey@abhayp.xyz" className="footer-social-link" title="Email"><i className="fa-regular fa-envelope"></i></a>
+            <a href="https://github.com/itsabh4y" className="footer-social-link" title="Github"><i className="fa-brands fa-github"></i></a>
           </div>
           <div className="footer-rights">
             2026 ABHAY — ALL RIGHTS RESERVED <span style={{ margin: '0 8px', opacity: 0.5 }}>|</span> <Link to="/sitemap" style={{ color: 'var(--text-secondary)', textDecoration: 'underline' }}>Sitemap</Link>

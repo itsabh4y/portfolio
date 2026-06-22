@@ -790,7 +790,7 @@ section.reveal-visible {
     transition: color 0.2s;
 }
 .footer-social-link:hover {
-    color: var(--text-primary);
+    color: var(--accent-blue);
 }
 
 /* Bottom Nav */
