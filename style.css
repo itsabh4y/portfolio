@@ -865,16 +865,18 @@ section.reveal-visible {
 }
 .quote-icon {
     position: absolute;
-    top: -40px;
-    left: -10px;
-    color: var(--accent-blue);
-    font-size: 240px;
-    opacity: 0.08;
-    font-family: var(--font-serif);
-    font-style: italic;
-    line-height: 1;
-    z-index: 0;
+    top: 24px;
+    left: 24px;
+    width: 56px;
+    height: 56px;
+    opacity: 0.3;
     pointer-events: none;
+    z-index: 0;
+    user-select: none;
+}
+.quote-icon svg {
+    width: 100%;
+    height: 100%;
 }
 .testimonial-text {
     position: relative;
@@ -885,6 +887,8 @@ section.reveal-visible {
     flex: 1;
 }
 .testimonial-author {
+    position: relative;
+    z-index: 1;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -896,6 +900,11 @@ section.reveal-visible {
     height: 40px;
     border-radius: 50%;
     background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #fff;
 }
 .author-info {
     display: flex;
