@@ -36,13 +36,13 @@ Honest scopes, quick delivery, and premium aesthetics.
 
 Here are some of the standout platforms I have built and scaled:
 
-<details open>
+<!-- <details open>
 <summary><b>🛒 Cartve - Startup E-commerce Platform</b></summary>
 <br/>
 <img src="./public/project-cartve.png" alt="Cartve Project" width="100%" style="border-radius: 8px; border: 1px solid #eaeaea;"/>
 <br/><br/>
 A full-stack, scalable e-commerce solution designed for modern startups. Fast load times, seamless checkout experiences, and robust admin tools.
-</details>
+</details> -->
 
 <br/>
 
