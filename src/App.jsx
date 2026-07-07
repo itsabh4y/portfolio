@@ -97,7 +97,7 @@ function App() {
           <div className="vertical-text">
             <span>BY THE HORIZONS</span>
             <span className="dot">•</span>
-            <span>ABHAY P.</span>
+            <span>ABHAY P</span>
           </div>
           <div className="copyright">© 2026</div>
         </aside>
@@ -124,7 +124,7 @@ function App() {
 
               <h1 className="hero-title">
                 Freelance Web<br />
-                Developer.<br />
+                Developer,<br />
                 <span className="animated-word-container" id="animated-words-container">
                   {words.map((word, i) => (
                     <span
@@ -189,13 +189,13 @@ function App() {
             <div className="section-header">
               <div className="section-label">SELECTED WORKS</div>
               <div className="section-title-wrap">
-                <h2 className="section-title serif">Three sites, three different problems.</h2>
+                <h2 className="section-title serif">Two sites, two different problems</h2>
                 <p className="section-desc">Each one shipped end-to-end — design, build, and the small details that make a site feel alive.</p>
               </div>
             </div>
 
             <div className="projects-list">
-              <article className="project-item">
+              {/* <article className="project-item">
                 <div className="project-image">
                   <img src="/project-cartve.png" alt="Cartve" loading='lazy' />
                 </div>
@@ -210,13 +210,13 @@ function App() {
                   </div>
                   <a href="https://cartve.abhayp.xyz" target='_blank' className="project-link">Visit the site ↗</a>
                 </div>
-              </article>
+              </article> */}
               <article className="project-item reverse">
                 <div className="project-image">
                   <img src="/project-thepowerdown.png" alt="Power Down Hosting" loading='lazy' />
                 </div>
                 <div className="project-info">
-                  <div className="project-meta">02. / CLOUD INFRASTRUCTURE & VPS</div>
+                  <div className="project-meta">01. / CLOUD INFRASTRUCTURE & VPS</div>
                   <h3 className="project-title serif">Power Down Hosting</h3>
                   <p className="project-description">A next-gen hosting brand: scalable VPS, military-grade security, and an interface built for engineers in a hurry.</p>
                   <div className="project-tags">
@@ -233,7 +233,7 @@ function App() {
                   <img src="/project-acs.png" alt="ACS Infotech" loading='lazy' />
                 </div>
                 <div className="project-info">
-                  <div className="project-meta">03. / CLOUD HOSTING, NEPAL</div>
+                  <div className="project-meta">02. / CLOUD HOSTING, NEPAL</div>
                   <h3 className="project-title serif">ACS Infotech Pvt. Ltd.</h3>
                   <p className="project-description">Full website for an enterprise IT services company — multi-currency pricing, localized copy, and a deeply technical product catalog.</p>
                   <div className="project-tags">
