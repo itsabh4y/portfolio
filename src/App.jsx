@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import LoadingScreen from './LoadingScreen';
+import ProjectCarousel from './ProjectCarousel';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [zoomedImg, setZoomedImg] = useState(null);
   const [time, setTime] = useState('');
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
@@ -86,8 +86,7 @@ function App() {
 
   return (
     <>
-      {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
-      <div className={`site-container ${loading ? 'site-hidden' : 'site-revealed'}`}>
+      <div className="site-container site-revealed">
         {/* Left Sidebar */}
         <aside className="left-sidebar">
           <div className="b-logo blue-dot">
@@ -189,34 +188,46 @@ function App() {
             <div className="section-header">
               <div className="section-label">SELECTED WORKS</div>
               <div className="section-title-wrap">
-                <h2 className="section-title serif">Two sites, two different problems</h2>
+                <h2 className="section-title serif">Three sites, three different problems</h2>
                 <p className="section-desc">Each one shipped end-to-end — design, build, and the small details that make a site feel alive.</p>
               </div>
             </div>
 
             <div className="projects-list">
-              {/* <article className="project-item">
+              <article className="project-item">
                 <div className="project-image">
-                  <img src="/project-cartve.png" alt="Cartve" loading='lazy' />
+                  <ProjectCarousel onImageClick={setZoomedImg}>
+                    <img src="/aeilo/1.png" alt="Aeilo" loading='lazy' />
+                    <img src="/aeilo/2.png" alt="Aeilo 2" loading='lazy' />
+                    <img src="/aeilo/3.png" alt="Aeilo 3" loading='lazy' />
+                    <img src="/aeilo/4.png" alt="Aeilo 4" loading='lazy' />
+                    <img src="/aeilo/5.png" alt="Aeilo 5" loading='lazy' />
+                    <img src="/aeilo/6.png" alt="Aeilo 6" loading='lazy' />
+                    <img src="/aeilo/7.png" alt="Aeilo 7" loading='lazy' />
+                    <img src="/aeilo/8.png" alt="Aeilo 8" loading='lazy' />
+                    <img src="/aeilo/9.png" alt="Aeilo 9" loading='lazy' />
+                  </ProjectCarousel>
                 </div>
                 <div className="project-info">
-                  <div className="project-meta">01. / STARTUP E-COMMERCE PLATFORM</div>
-                  <h3 className="project-title serif">Cartve</h3>
-                  <p className="project-description">A one-stop platform for creators to launch storefronts, accept secure checkouts, and track real-time orders — no coding required.</p>
+                  <div className="project-meta">01. / Aeilo Theme</div>
+                  <h3 className="project-title serif">Aeilo Theme</h3>
+                  <p className="project-description">A theme for hosting-industry players, with a clean and modern design.</p>
                   <div className="project-tags">
-                    <span className="tag">SaaS</span>
-                    <span className="tag">Dashboard</span>
-                    <span className="tag">Payments</span>
+                    <span className="tag">HTML</span>
+                    <span className="tag">CSS</span>
+                    <span className="tag">JavaScript</span>
                   </div>
-                  <a href="https://cartve.abhayp.xyz" target='_blank' className="project-link">Visit the site ↗</a>
+                  <a href="https://github.com/itsabh4y/Aeilo" target='_blank' className="project-link">GitHub Link ↗</a>
                 </div>
-              </article> */}
+              </article>
               <article className="project-item reverse">
                 <div className="project-image">
-                  <img src="/project-thepowerdown.png" alt="Power Down Hosting" loading='lazy' />
+                  <ProjectCarousel onImageClick={setZoomedImg}>
+                    <img src="/project-thepowerdown.png" alt="Power Down Hosting" loading='lazy' />
+                  </ProjectCarousel>
                 </div>
                 <div className="project-info">
-                  <div className="project-meta">01. / CLOUD INFRASTRUCTURE & VPS</div>
+                  <div className="project-meta">02. / CLOUD INFRASTRUCTURE & VPS</div>
                   <h3 className="project-title serif">Power Down Hosting</h3>
                   <p className="project-description">A next-gen hosting brand: scalable VPS, military-grade security, and an interface built for engineers in a hurry.</p>
                   <div className="project-tags">
@@ -230,10 +241,12 @@ function App() {
 
               <article className="project-item ">
                 <div className="project-image">
-                  <img src="/project-acs.png" alt="ACS Infotech" loading='lazy' />
+                  <ProjectCarousel onImageClick={setZoomedImg}>
+                    <img src="/project-acs.png" alt="ACS Infotech" loading='lazy' />
+                  </ProjectCarousel>
                 </div>
                 <div className="project-info">
-                  <div className="project-meta">02. / CLOUD HOSTING, NEPAL</div>
+                  <div className="project-meta">03. / CLOUD HOSTING, NEPAL</div>
                   <h3 className="project-title serif">ACS Infotech Pvt. Ltd.</h3>
                   <p className="project-description">Full website for an enterprise IT services company — multi-currency pricing, localized copy, and a deeply technical product catalog.</p>
                   <div className="project-tags">
@@ -410,6 +423,14 @@ function App() {
           <a href="mailto:hey@abhayp.xyz" className="mobile-menu-email">hey@abhayp.xyz</a>
         </div>
       </div>
+      
+      {/* Lightbox Overlay */}
+      {zoomedImg && (
+        <div className="lightbox-overlay" onClick={() => setZoomedImg(null)}>
+          <button className="lightbox-close" onClick={() => setZoomedImg(null)}>×</button>
+          <img src={zoomedImg} alt="Zoomed View" className="lightbox-image" onClick={(e) => e.stopPropagation()} />
+        </div>
+      )}
     </>
   );
 }

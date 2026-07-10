@@ -703,7 +703,8 @@ section.reveal-visible {
     flex: 1.5;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    border: none;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15), 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .project-image img {
@@ -1610,6 +1611,201 @@ section.reveal-visible {
 
     .mobile-nav-bar {
         bottom: 14px;
+    }
+    .project-tags {
+        flex-wrap: wrap;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .stat-item {
+        border-right: none;
+        padding: 28px 24px;
+    }
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .timeline {
+        padding-left: 28px;
+    }
+    .timeline-marker {
+        left: -32.5px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .testimonial-card {
+        padding: 28px;
+    }
+
+    .contact-title {
+        font-size: 2.25rem;
+    }
+    .contact-desc {
+        font-size: 15px;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 48px;
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+        padding: 32px 24px 100px 24px;
+    }
+    .footer-logo, .footer-rights, .footer-socials {
+        justify-self: center;
+    }
+    .footer-rights {
+        font-size: 10px;
+    }
+
+    /* Hide desktop nav, show mobile nav */
+    .bottom-nav {
+        display: none;
+    }
+    .mobile-nav-bar {
+        display: flex;
+    }
+    .mobile-menu-overlay {
+        display: flex;
+    }
+
+    .site-footer {
+        padding-bottom: 90px;
+    }
+}
+
+/* ---- Small Mobile ---- */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 80px 16px 32px 16px;
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 28px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-image-wrapper {
+        max-width: 280px;
+    }
+
+    .version-tag {
+        font-size: 9px;
+    }
+
+    .tech-stack {
+        font-size: 8px;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+    }
+
+    .top-bar {
+        padding: 12px 16px 0 16px;
+        gap: 8px;
+    }
+    .status-badge, .time-badge {
+        font-size: 11px;
+        padding: 5px 12px;
+    }
+
+    .works-section, .journey-section, .words-section, .contact-section {
+        padding: 48px 16px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .project-title {
+        font-size: 1.5rem;
+    }
+    .project-description {
+        font-size: 14px;
+    }
+    .project-meta {
+        font-size: 9px;
+    }
+
+    .stat-item {
+        padding: 24px 16px;
+    }
+    .stat-value {
+        font-size: 1.75rem;
+    }
+    .stat-desc {
+        font-size: 13px;
+    }
+
+    .timeline {
+        padding-left: 24px;
+    }
+    .timeline-marker {
+        left: -28.5px;
+        width: 8px;
+        height: 8px;
+    }
+    .timeline-title {
+        font-size: 1.1rem;
+    }
+    .timeline-desc {
+        font-size: 14px;
+    }
+
+    .testimonial-card {
+        padding: 24px;
+    }
+    .testimonial-text {
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+
+    .contact-title {
+        font-size: 1.85rem;
+    }
+    .contact-desc {
+        font-size: 14px;
+    }
+    .btn-contact {
+        font-size: 14px;
+        padding: 14px 28px;
+    }
+
+    .site-footer {
+        padding: 24px 16px 90px 16px;
+        gap: 16px;
+    }
+    .footer-rights {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .mobile-nav-bar {
+        bottom: 14px;
         width: calc(100% - 24px);
         padding: 8px 14px;
     }
@@ -1622,4 +1818,81 @@ section.reveal-visible {
     .mobile-menu-links li a {
         font-size: 1.75rem;
     }
+}
+
+/* ============================================
+   PROJECT CAROUSEL & LIGHTBOX STYLES
+   ============================================ */
+
+.project-carousel {
+    display: grid;
+    width: 100%;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.carousel-slide {
+    grid-area: 1 / 1;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Lightbox Overlay */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.lightbox-image {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    cursor: default;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
 }
